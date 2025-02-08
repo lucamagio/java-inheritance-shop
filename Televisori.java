@@ -2,8 +2,12 @@ public class Televisori extends Prodotto{
     private int pollici;
     private boolean smartTv;
 
-    public Televisori(){
+    public Televisori(String marca, String nome, int pollici, boolean smartTV){
         setCodice();
+        setMarca(marca);
+        setNome(nome);
+        setPollici(pollici);
+        setSmartTv(smartTV);
     }
 
     public int setPollici(int pollici){
@@ -20,11 +24,16 @@ public class Televisori extends Prodotto{
 
     public void getSmartTv(){
         System.out.println(smartTv);
+        
     }
 
-    public void specificheTelevisore(){
-        System.out.println("La grandezza dello schermo del televisore è: " + pollici + " pollici");
-        System.out.println("Il televisore è smart: " + smartTv);
+    @Override
+    public String toString() {
+        return "Il codice del Televisore che vuoi acquistare è " + getCodice() 
+                + ", Il suo Nome è " + getNome() 
+                + ", la marca è " + getMarca()
+                + ", ha una grandezza di " + pollici +" pollici"
+                + ", è una SmartTV: " + smartTv;
     }
     
 }

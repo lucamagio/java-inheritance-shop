@@ -2,8 +2,12 @@ public class Smartphone extends Prodotto{
     private int memoria;
     private String codiceImei;
 
-    public Smartphone(){
+    public Smartphone(String marca, String nome, int memoria){
         setCodice();
+        setMemoria(memoria);
+        setNome(nome);
+        setMarca(marca);
+
     }
 
     public String setCodiceImei(String codiceImei){
@@ -22,9 +26,12 @@ public class Smartphone extends Prodotto{
         System.out.println(memoria);
     }
 
-    public void specificheSmartphone(){
-        System.out.println("Il codice IMEI è: " + codiceImei);
-        System.out.println("La memoria è di: " + memoria + " gb");
+    @Override
+    public String toString() {
+        return "Il codice dello Smartphone che vuoi acquistare è " + getCodice() 
+                + ", Il suo Nome è " + getNome() 
+                + ", la marca è " + getMarca() 
+                + " ed ha una memoria di " + memoria + "gb";
     }
     
 }

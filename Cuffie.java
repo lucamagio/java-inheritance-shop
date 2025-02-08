@@ -2,8 +2,13 @@ public class Cuffie extends Prodotto{
     private String colore;
     private boolean wireless;
 
-    public Cuffie(){
+    public Cuffie(String marca, String nome, String colore, boolean wireless){
         getCodice();
+        setMarca(marca);
+        setNome(nome);
+        setColore(colore);
+        setWireless(wireless);
+
     }
 
     public String setColore(String colore){
@@ -30,5 +35,14 @@ public class Cuffie extends Prodotto{
         }else{
             System.out.println("Le cuffie sono Cablate");
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Il codice delle Cuffie che vuoi acquistare è " + getCodice() 
+                + ", Il suo Nome è " + getNome() 
+                + ", la marca è " + getMarca()
+                + ", il loro colore è " + colore
+                + ", le cuffie sono wireless: " +  wireless;
     }
 }

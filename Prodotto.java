@@ -51,11 +51,12 @@ public class Prodotto {
         return iva;
     }
 
-    public void dettagliProdotto(){
-        System.out.println("Il codice è: " + codice);
-        System.out.println("Il nome è: " + nome);
-        System.out.println("La marca è: " + marca);
-        System.out.println("Il prezzo è: " + prezzo + " euro");
-        System.out.println("L'iva è: " + iva);
+    @Override
+    public String toString() {
+        return "Il codice del Prodotto che vuoi acquistare è " + codice 
+                + ", Il suo Nome è " + nome 
+                + " e la marca è " + marca;
     }
+
+    
 }
